@@ -45,15 +45,7 @@ public class ana_islem {
 			b.bol();
 			break;
 			
-		case 5:
-			
-			us_al u = new us_al();
-			
-			u.ust_al(3,2);
-			break;
-			
-			
-			
+		
 		
 		
 		
