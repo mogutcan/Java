@@ -1,1 +1,1 @@
-![Alt](http://www.imagesturk.net/images/iSsYq.gif)
+![Alt](loading.gif)
