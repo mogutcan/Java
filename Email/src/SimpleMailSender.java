@@ -1,5 +1,4 @@
 
-
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -162,28 +161,8 @@ public class SimpleMailSender
 	
 		String[] to = new String[1];
 		to[0] = "mogutcan@bil.omu.edu.tr";
-		//to[1] = "mail@gmail.com";
-		//String[] files = new String[2];
-		//files[0] = "file1.txt";
-		//files[1] = "file2.txt";
-		
-		
-
-		//Email e = new Email();
-		
-		//e.setSize(300, 600);
-		//e.setVisible(true);
+	
  
-		
-		SimpleMailSender mailSender = new SimpleMailSender(
-				"smtp.gmail.com", "mogutcan@mf.omu.edu.tr", "19031902", "Burası mail gövdesidir",
-				"Konu nedir ? ", to, "mogutcan@mf.omu.edu.tr"
-				
-				);
-		
-		
-		
-		//System.out.println("Mail has been sent successfully");
 		
 	} 
 	
