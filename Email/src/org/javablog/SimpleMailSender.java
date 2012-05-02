@@ -162,28 +162,8 @@ public class SimpleMailSender
 	
 		String[] to = new String[1];
 		to[0] = "mogutcan@bil.omu.edu.tr";
-		//to[1] = "mail@gmail.com";
-		//String[] files = new String[2];
-		//files[0] = "file1.txt";
-		//files[1] = "file2.txt";
-		
-		
-
-		Email e = new Email();
-		
-		e.setSize(300, 600);
-		e.setVisible(true);
- 
-		
-		SimpleMailSender mailSender = new SimpleMailSender(
-				"smtp.gmail.com", "mogutcan@mf.omu.edu.tr", "19031902", "Burası mail gövdesidir",
-				"Konu nedir ? ", to, "mogutcan@mf.omu.edu.tr"
-				
-				);
-		
-		
-		
-		//System.out.println("Mail has been sent successfully");
+	
+	
 		
 	} 
 	
@@ -199,104 +179,9 @@ public class SimpleMailSender
 		}
 	}
  
-}
 
-class Email extends JFrame implements ActionListener{
-	
-	
-	
-	JTextArea textArea = new JTextArea(30,20);
-	
-	JButton gonder = new JButton("Gönder");
-	JTextField konu = new JTextField(20);
-	JTextField alici = new JTextField(20);
-	
-	JLabel etiket_konu = new JLabel("Konu");
-	JLabel etiket_kime = new JLabel("Kime");
-	JLabel mesaj       = new JLabel("Mesaj");
-	String govde,subject,sender,mesajı_alan;
-	String [] mesajıalan ;
-	
-	
-	
-	 
-	
-	
-	
-	public Email()  {
-		
-		setLayout(new FlowLayout(2,5,10));
-		
-		add(etiket_konu);
-		konu.addActionListener(this);
-		add(konu);
-		
-		add(etiket_kime);
-		alici.addActionListener(this);
-		add(alici);
 
-		
-		add(mesaj);
-		
-		// İlginc. Textarea dinlenmiyor ama calısıyor?
-		add(textArea);
-		
-		
-		gonder.addActionListener(this);
-		add(gonder);
-		
-		
-		
-		
-	}
-	
-	
-	
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-	
-		
-		if (e.getSource() == gonder) {
-			
-			govde = textArea.getText();
-			subject = konu.getText();
-			mesajı_alan = alici.getText(); 
-			
-			mesajıalan = mesajı_alan.split(" ");
-			
-			
-			
-			
-			
-			
-			String[] to = new String[1];
-			to[0] = "mogutcan@bil.omu.edu.tr";
-			
-			SimpleMailSender mailSender = new SimpleMailSender(
-					"smtp.gmail.com", "mogutcan@mf.omu.edu.tr", "19031902", govde,
-					subject,mesajıalan, "mogutcan@mf.omu.edu.tr"
-					
-					);
-			try {
-				mailSender.sendMail();
-				
-			} catch (MessagingException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-				JOptionPane.showMessageDialog(null, "Bir hata oluştu\nİnternet bağlantınızı kontrol edin");
-			}
-			
-			
-			
-			
-			
-			textArea.setText("Basarıyla gönderildi");
-			
-			
-			
-		} 
-	}
-	
+
 	public static void main(String[] args) {
 		
 		Email e = new Email();
