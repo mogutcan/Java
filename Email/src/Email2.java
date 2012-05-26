@@ -85,31 +85,10 @@ public class Email2 extends JFrame implements ActionListener{
 			govde = textArea.getText();
 			subject = konu.getText();
 			mesajı_alan = alici.getText(); 
-			
 			mesajıalan = mesajı_alan.split(" ");
-			
-			
-			
-			
-			
-			
+	
 			String[] to = new String[1];
 			to[0] = "mogutcan@bil.omu.edu.tr";
-			
-			SimpleMailSender mailSender = new SimpleMailSender(
-					"smtp.gmail.com", "mogutcan@mf.omu.edu.tr", "19031902", govde,
-					subject,mesajıalan, "mogutcan@mf.omu.edu.tr"
-					
-					);
-			try {
-				mailSender.sendMail();
-				
-			} catch (MessagingException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-				JOptionPane.showMessageDialog(null, "Bir hata oluştu\nİnternet bağlantınızı kontrol edin");
-			}
-			
 	
 			textArea.setText("Basarıyla gönderildi");
 			
