@@ -7,30 +7,45 @@ import javax.swing.JOptionPane;
 public class Cleaner {
 	
 	
-	String mesajlar = "";
+	static String mesajlar = "";
+	
 	public void delete(File file) {
-		 
-			if(file.isDirectory()){
-				
-				while (file.list().length > 0) {
-		    				
-		    		String files[] = file.list();
-		    		
-					for (String temp : files) {
-				    	  
-						File fileDelete = new File(file, temp);
-						
-						mesajlar += "Siliniyor => " +fileDelete+ "\n";
-						
-				        fileDelete.delete();
-				        	   
-					}
-					
-				}
-				
-				JOptionPane.showMessageDialog(null, "Çerezler silindi");
-		    		
-			}
-		}
-	}	
+	 
+	    	if(file.isDirectory()){
+	 
+	    		// bos ise , sil
+	    		if(file.list().length==0){
+	 
+	    		   file.delete();
+	    		   mesajlar += "Siliniyor => " + file.getAbsolutePath()+ "\n";
+	    		   
+	    		}else{
+	 
+	    		   
+	        	   String files[] = file.list();
+	 
+	        	   for (String temp : files) {
+	        	      
+	        	      File fileDelete = new File(file, temp);
+	        	      delete(fileDelete);
+	        	   }
+	 
+	        	   //klasor icerigi bos ise, klasoru sil
+	        	   if(file.list().length==0){
+	           	     file.delete();
+	           	     mesajlar += "Siliniyor => " + file.getAbsolutePath()+ "\n";
+	           
+	        	   }
+	    		}
+	    		
+	 
+	    		}else{
+	    			
+	    			// dosya ise , sil
+	    			file.delete();
+	    			mesajlar += "Siliniyor => " + file.getAbsolutePath()+ "\n";
+	    		}
+	    	}
+}
 
+	

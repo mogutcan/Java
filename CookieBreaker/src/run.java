@@ -11,9 +11,8 @@ public class run{
 		
 		arayuz a = new arayuz();
 		a.start();
-		
+	
 	}
 	
 	
 }
-

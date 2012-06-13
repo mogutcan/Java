@@ -1,4 +1,10 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
+
+import javax.swing.JOptionPane;
+
+
 
 
 
@@ -6,47 +12,55 @@ import java.io.File;
 public class timeCleaner extends Cleaner {
 	
 
-	// Override yaptýrýyoruz ...
+	Cleaner baslat = new Cleaner();
+	
+	static File dosya;
+	javax.swing.Timer tx ;
+	arayuz t ;
+	
+	// Override yapÄ±yoruz ...
 	public void delete(File file) {
 		
-		arayuz t = new arayuz();
+		dosya = file;
+		t = new arayuz();
 		int a= t.sureler.getSelectedIndex();
+		int sure_sec;
 		
-		while(true){
+		if (a == 0) {
+			sure_sec = 300000;
+		}
+		else if (a == 1) {
+			sure_sec = 10800000;
+		}
+		else {
+			sure_sec = 21600000;
+		}
+
+	
+		tx = new javax.swing.Timer(sure_sec, new ClockListener());
+        tx.start();
+        
+    		
+	}
+	
+	
+	class ClockListener implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
 			
-			if (t.durakla)
-				break;
-			else{
-		
-				try {
-				
-				
-					if (a == 0)
-					
-						Thread.sleep(5000);
-				
-					if (a == 1)
-					
-						Thread.sleep(6000);
-				
-					else
-					
-						Thread.sleep(7000);
-				
-					
-				
-					super.delete(file);
-				
+			baslat.delete(dosya);
+			JOptionPane.showMessageDialog(null, "Silindi");
 			
-				} catch (InterruptedException e) {
-					
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-			
-			
-			
-				}
+			if (t.durakla){
+				
+				tx.stop();
+				
 			}
 		}
 	}
 }
+	
+
+	

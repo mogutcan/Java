@@ -1,15 +1,27 @@
-# Bilgisayardaki **hesap adınızla** programa başlayın... #
+# Bilgisayardaki **hesap adÄ±nÄ±zla** programa baÅŸlayÄ±n... #
+
+![Alt1](http://img421.yukle.tc/images/1813Ekran_goruntusu_2012-06-13_18:13:15.png)
+
+
+
+# Ä°ster **anÄ±nda** Ã§erezleri silin, ister belirli zaman aralÄ±klarÄ±nda #
+# programÄ±n **otomatik** olarak temizleme yapmasÄ±nÄ± belirleyin #
+
+![Alt1](http://img420.yukle.tc/images/6232Ekran_goruntusu_2012-06-13_17:35:59.png)
+
+
+
+# Ã‡erezler silinirken silinen dosyalarÄ± da bir **rapor** ÅŸeklinde gÃ¶rebilirsiniz#
+
+![Alt1](http://img420.yukle.tc/images/2629Ekran_goruntusu_2012-06-13_17:38:48.png)
+
+
+# Windows'tan ekran gÃ¶rÃ¼ntÃ¼leri #
 
 ![Alt1](http://img422.yukle.tc/images/54101.PNG)
-
-
-# İster **anında** çerezleri silin, ister belirli zaman aralıklarında #
-# programın **otomatik** olarak temizleme yapmasını belirleyin. #
 
 
 ![Alt1](http://img420.yukle.tc/images/62402.PNG)
 
 
-# Çerezler silinirken silinen dosyalarıda bir **rapor** şeklinde görebilirsiniz#
 ![Alt1](http://img423.yukle.tc/images/4933.PNG)
-

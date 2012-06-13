@@ -24,7 +24,7 @@ public class arayuz extends JFrame implements ActionListener,ItemListener {
 	JButton simdi_tara;
 	JButton zamanla;
 	JButton durdur;
-	boolean durakla;
+	static boolean durakla;
 	
 	JCheckBox rapor;
 	boolean state;
@@ -50,13 +50,13 @@ public class arayuz extends JFrame implements ActionListener,ItemListener {
 		anacerceve.setLayout(new FlowLayout());
 		
 		
+		anacerceve.setTitle("Cookie Breaker");
 		
-		
-		rapor = new JCheckBox("Ayrýntýlý rapor",false);
+		rapor = new JCheckBox("AyrÄ±ntÄ±lÄ± rapor",false);
 		rapor.addItemListener(this);
 		anacerceve.add(rapor);
 		
-		simdi_tara = new JButton("Þimdi Tara");
+		simdi_tara = new JButton("Åžimdi Tara");
 		simdi_tara.addActionListener(this);
 		anacerceve.add(simdi_tara);
 		
@@ -77,11 +77,11 @@ public class arayuz extends JFrame implements ActionListener,ItemListener {
 		anacerceve.add(durdur);
 		
 		
-		icon = new ImageIcon("clean.jpg");
+		icon = new ImageIcon("cB_lib/clean.jpg");
 		resim_alani = new JLabel(icon);
 		anacerceve.add(resim_alani);
 		
-		
+		anacerceve.setResizable(false);
 		anacerceve.setLocation(500,150);
 		anacerceve.setVisible(false);
 		anacerceve.setSize(250,450);
@@ -92,8 +92,8 @@ public class arayuz extends JFrame implements ActionListener,ItemListener {
 		pencere = new JFrame();
 		pencere.setLayout(new FlowLayout());
 			
-			
-		bilgi = new JLabel("Bilgisayardaki kullanýcý adýnýz  ");
+		pencere.setTitle("Cookie Breaker");
+		bilgi = new JLabel("Bilgisayardaki hesap adÄ±nÄ±z  ");
 		pencere.add(bilgi);
 			
 		pc = new JTextField(30);
@@ -104,6 +104,7 @@ public class arayuz extends JFrame implements ActionListener,ItemListener {
 		pencere.add(devam);
 			
 		pencere.setSize(400,300);
+		pencere.setResizable(false);
 		pencere.setLocation(500,150);
 		pencere.setVisible(true);
 			
@@ -130,7 +131,7 @@ public class arayuz extends JFrame implements ActionListener,ItemListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		
-		// Program kullandýgýnýz isletim sistemini tanýyor!
+		// Program kullandÄ±gÄ±nÄ±z iÅŸletim sistemini tanÄ±yor!
 		
 		String kullanici = pc.getText();
 		String os = System.getProperty("os.name");
@@ -144,8 +145,8 @@ public class arayuz extends JFrame implements ActionListener,ItemListener {
 			f1 = new File("C:\\Documents and Settings\\"+kullanici+ "\\Cookies");
 		
 		else
-			// Linux ?
-			f1 = new File("C:\\Documents and Settings\\"+kullanici+ "\\Cookies");
+			// Linux
+			f1 = new File("/home/"+kullanici+"/.mozilla");
 			
 		
 		if (e.getSource() == simdi_tara){
@@ -160,8 +161,9 @@ public class arayuz extends JFrame implements ActionListener,ItemListener {
 					
 				c.delete(f1);
 				
+				// Gercek zamanli akis boyle saglanir ;-)
+				y.raporalani.insert(c.mesajlar,0);
 				
-				y.raporalani.setText(c.mesajlar);
 				
 				
 				
@@ -185,13 +187,18 @@ public class arayuz extends JFrame implements ActionListener,ItemListener {
 		if (e.getSource() == durdur){
 			
 			durakla = true;
+			JOptionPane.showMessageDialog(null, "Zaman ayari iptal edildi");
+			
 			
 		}
 		
 		if (e.getSource() == devam){
+			String username = System.getProperty("user.name");
+			String verify = pc.getText();
 			
-			if(!f1.exists())
-				JOptionPane.showMessageDialog(null, "Hesap adýnýzý yanlýþ girdiniz");
+			
+			if(!verify.equals(username))
+				JOptionPane.showMessageDialog(null, "Hesap adÄ±nÄ±zÄ± yanlÄ±ÅŸ girdiniz");
 			else{
 			
 				pencere.setVisible(false);
