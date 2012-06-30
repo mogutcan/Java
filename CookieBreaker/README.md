@@ -1,8 +1,3 @@
-# Bilgisayardaki **hesap adınızla** programa başlayın... #
-
-![Alt1](http://img421.yukle.tc/images/1813Ekran_goruntusu_2012-06-13_18:13:15.png)
-
-
 
 # İster **anında** çerezleri silin, ister belirli zaman aralıklarında #
 # programın **otomatik** olarak temizleme yapmasını belirleyin #
